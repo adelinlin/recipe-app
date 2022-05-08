@@ -1,0 +1,994 @@
+{
+	"info": {
+		"_postman_id": "73d302b9-81f6-480d-8a2a-dc7384d93575",
+		"name": "receipe-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "pantry",
+			"item": [
+				{
+					"name": "update-ingredient-quantity",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "adelinCook",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "test",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/pantry/ingredients/1/updateQuantity/7",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pantry",
+								"ingredients",
+								"1",
+								"updateQuantity",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-ingredient-quantity-forbidden",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "adelinAdmin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "test",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/pantry/ingredients/1/updateQuantity/7",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pantry",
+								"ingredients",
+								"1",
+								"updateQuantity",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-ingredients",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "adelinCook",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "test",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/pantry/ingredients",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pantry",
+								"ingredients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-ingredients-forbidden",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "test",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "adelinAdmin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/pantry/ingredients",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pantry",
+								"ingredients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-ingredient (shopping)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "adelinCook",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "test",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"sugar\",\r\n    \"quantity\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/pantry/ingredients",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pantry",
+								"ingredients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-ingredient-negative-quantity",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "adelinCook",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "test",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"apple\",\r\n    \"quantity\": -4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/pantry/ingredients",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pantry",
+								"ingredients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-ingredient-forbidden",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "adelinAdmin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "test",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"sugar\",\r\n    \"quantity\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/pantry/ingredients",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pantry",
+								"ingredients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-ingredient-forbidden",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "adelinAdmin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "test",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/pantry/ingredients/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pantry",
+								"ingredients",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-ingredient",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "adelinCook",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "test",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/pantry/ingredients/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pantry",
+								"ingredients",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "register-user-with-invalid-role",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"adelinAdmin\",\r\n    \"password\": \"test\",\r\n    \"role\" : \"ROLE_BASIC_USER2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register-user",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"adelinBasicUser\",\r\n    \"password\": \"test\",\r\n    \"role\" : \"ROLE_BASIC_USER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register-user-with-username-already-used",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"adelinAdmin\",\r\n    \"password\": \"test\",\r\n    \"role\" : \"ROLE_ADMIN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "recipe",
+			"item": [
+				{
+					"name": "public",
+					"item": [
+						{
+							"name": "add-public-recipe-forbidden",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "adelinBasicUser",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "test",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"pancakes\",\r\n    \"cookingTime\": 20,\r\n    \"difficulty\": \"EASY\",\r\n    \"ingredients\": [\r\n        {\r\n            \"name\": \"milk\",\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"name\": \"sugar\",\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"name\": \"egg\",\r\n            \"quantity\": 2\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/recipes/public",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"recipes",
+										"public"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add-public-recipe",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "adelinCook",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "test",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"cake\",\r\n    \"cookingTime\": 20,\r\n    \"difficulty\": \"INTERMEDIATE\",\r\n    \"ingredients\": [\r\n        {\r\n            \"name\": \"milk\",\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"name\": \"sugar\",\r\n            \"quantity\": 5\r\n        },\r\n        {\r\n            \"name\": \"egg\",\r\n            \"quantity\":32\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/recipes/public",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"recipes",
+										"public"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update-public-recipe",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "adelinCook",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "test",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"pancake\",\r\n    \"cookingTime\": 30,\r\n    \"difficulty\": \"INTERMEDIATE\",\r\n    \"ingredients\": [\r\n        {\r\n            \"name\": \"milk\",\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"name\": \"sugar\",\r\n            \"quantity\": 5\r\n        },\r\n        {\r\n            \"name\": \"egg\",\r\n            \"quantity\":3\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/recipes/public/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"recipes",
+										"public",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete-public-recipe",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "adelinCook",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "test",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/recipes/public/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"recipes",
+										"public",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get-public-recipes",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "adelinBasicUser",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "test",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/recipes/public",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"recipes",
+										"public"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "private",
+					"item": [
+						{
+							"name": "add-private-recipe-forbidden",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "adelinAdmin",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "test",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"pancakes\",\r\n    \"cookingTime\": 20,\r\n    \"difficulty\": \"EASY\",\r\n    \"ingredients\": [\r\n        {\r\n            \"name\": \"milk\",\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"name\": \"sugar\",\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"name\": \"egg\",\r\n            \"quantity\": 2\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/recipes/private",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"recipes",
+										"private"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add-private-recipe-cook1",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "adelinCook",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "test",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"cake\",\r\n    \"cookingTime\": 20,\r\n    \"difficulty\": \"INTERMEDIATE\",\r\n    \"ingredients\": [\r\n        {\r\n            \"name\": \"milk\",\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"name\": \"sugar\",\r\n            \"quantity\": 5\r\n        },\r\n        {\r\n            \"name\": \"egg\",\r\n            \"quantity\":32\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/recipes/private",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"recipes",
+										"private"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add-private-recipe-cook2",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "adelinCook2",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "test",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"cake2\",\r\n    \"cookingTime\": 20,\r\n    \"difficulty\": \"INTERMEDIATE\",\r\n    \"ingredients\": [\r\n        {\r\n            \"name\": \"milk\",\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"name\": \"sugar\",\r\n            \"quantity\": 5\r\n        },\r\n        {\r\n            \"name\": \"egg\",\r\n            \"quantity\":32\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/recipes/private",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"recipes",
+										"private"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update-private-recipe",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "adelinCook",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "test",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"pancake\",\r\n    \"cookingTime\": 30,\r\n    \"difficulty\": \"INTERMEDIATE\",\r\n    \"ingredients\": [\r\n        {\r\n            \"name\": \"milk\",\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"name\": \"sugar\",\r\n            \"quantity\": 5\r\n        },\r\n        {\r\n            \"name\": \"egg\",\r\n            \"quantity\":3\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/recipes/private/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"recipes",
+										"private",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete-private-recipe-denied",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "adelinCook2",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "test",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/recipes/private/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"recipes",
+										"private",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete-private-recipe",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "adelinCook",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "test",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/recipes/private/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"recipes",
+										"private",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get-private-recipes-cook1",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "adelinCook",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "test",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/recipes/private",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"recipes",
+										"private"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get-private-recipes-cook2",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "adelinCook2",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "test",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/recipes/private",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"recipes",
+										"private"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
